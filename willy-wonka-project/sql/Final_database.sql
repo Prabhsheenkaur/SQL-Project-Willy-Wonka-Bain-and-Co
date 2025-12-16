@@ -173,8 +173,6 @@ FROM (
 SELECT COUNT(*) FROM orders;
 SELECT * FROM orders LIMIT 5;
 
-TRUNCATE TABLE sales;
-
 -- seeding sales table from csv file and creating an auto increment Primary key
 INSERT INTO sales (
     order_id,
@@ -199,4 +197,3 @@ JOIN orders o
    AND r.ship_mode = o.ship_mode
 JOIN products p
     ON r.product_name = p.product_name; -- sales_id key remains auto increment INT since it is better for joins
-
